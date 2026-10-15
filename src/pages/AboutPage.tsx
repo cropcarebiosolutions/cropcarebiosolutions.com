@@ -5,7 +5,7 @@ import { PageIntro } from '../components/layout/PageIntro';
 import { PageHandoff } from '../components/layout/PageHandoff';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
-import agronomist from '../assets/images/agronomist_field_inspection_1787652581807.webp';
+import trapFarmer from '../assets/images/farmer_fruit_fly_trap_mango.webp';
 import harvest from '../assets/images/export_mango_harvest_1787652565787.webp';
 import farmer from '../assets/images/indian_farmer_field_1787640498872.webp';
 
@@ -180,8 +180,8 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             <Reveal className="lg:col-span-4">
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
                 <img
-                  src={agronomist}
-                  alt="An agronomist inspecting a trap in the field"
+                  src={trapFarmer}
+                  alt="A farmer hanging a Crop Care fruit fly trap on a mango tree"
                   className="aspect-[4/3] w-full rounded-lg object-cover"
                 />
                 <img
