@@ -26,12 +26,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         onNavigate={onNavigate}
         wideAside
         aside={
-          // From packing the lures to a farmer hanging the trap: the company in
-          // one silent loop, or its first frame under reduced motion.
+          // The company's own lure packets, filmed from the real artwork so every
+          // label stays exact. Its first frame stands in under reduced motion.
           reduceMotion ? (
             <img
-              src="/videos/about-intro-poster.webp"
-              alt="Pheromone lures being packed, and a farmer hanging an insect trap in a green field"
+              src="/videos/about-packets-poster.webp"
+              alt="Crop Care Bio Solutions pheromone lure packets for Rhinoceros Beetle, Oriental Fruit Fly, Diamondback Moth and Tomato Leaf Miner"
               className="aspect-[16/10] w-full rounded-lg object-cover"
             />
           ) : (
@@ -41,12 +41,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               loop
               playsInline
               preload="metadata"
-              poster="/videos/about-intro-poster.webp"
-              aria-label="Pheromone lures being packed, and a farmer hanging an insect trap in a green field"
+              poster="/videos/about-packets-poster.webp"
+              aria-label="Crop Care Bio Solutions pheromone lure packets for Rhinoceros Beetle, Oriental Fruit Fly, Diamondback Moth and Tomato Leaf Miner"
               className="aspect-[16/10] w-full rounded-lg bg-paper-3 object-cover shadow-[0_24px_60px_-30px_rgba(20,33,26,0.55)]"
             >
-              <source src="/videos/about-intro.webm" type="video/webm" />
-              <source src="/videos/about-intro.mp4" type="video/mp4" />
+              <source src="/videos/about-packets.mp4" type="video/mp4" />
             </video>
           )
         }
