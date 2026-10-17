@@ -26,28 +26,15 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         onNavigate={onNavigate}
         wideAside
         aside={
-          // Lures packed by hand, then the company's own packets, filmed from the real
-          // artwork so every label stays exact. A still stands in under reduced motion.
-          reduceMotion ? (
-            <img
-              src="/videos/about-packing-poster.webp"
-              alt="Pheromone lures being packed by hand, then Crop Care Bio Solutions lure packets for Rhinoceros Beetle, Oriental Fruit Fly, Diamondback Moth and Tomato Leaf Miner"
-              className="aspect-[16/10] w-full rounded-lg object-cover"
-            />
-          ) : (
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/videos/about-packing-poster.webp"
-              aria-label="Pheromone lures being packed by hand, then Crop Care Bio Solutions lure packets for Rhinoceros Beetle, Oriental Fruit Fly, Diamondback Moth and Tomato Leaf Miner"
-              className="aspect-[16/10] w-full rounded-lg bg-paper-3 object-cover shadow-[0_24px_60px_-30px_rgba(20,33,26,0.55)]"
-            >
-              <source src="/videos/about-packing.mp4" type="video/mp4" />
-            </video>
-          )
+          // The twelve lure packets laid out on the packing desk, labelled from the
+          // real artwork so every label stays exact.
+          <img
+            src="/images/photos/about-packets.webp"
+            alt="Twelve Crop Care Bio Solutions pheromone lure packets laid out on a packing desk"
+            width={1548}
+            height={968}
+            className="aspect-[16/10] w-full rounded-lg bg-paper-3 object-cover shadow-[0_24px_60px_-30px_rgba(20,33,26,0.55)]"
+          />
         }
       />
 
