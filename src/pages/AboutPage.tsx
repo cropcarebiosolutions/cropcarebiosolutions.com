@@ -24,18 +24,6 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         title={COMPANY.promise}
         lead={ABOUT.welcome}
         onNavigate={onNavigate}
-        wideAside
-        aside={
-          // The twelve lure packets laid out on the packing desk, labelled from the
-          // real artwork so every label stays exact.
-          <img
-            src="/images/photos/about-packets.webp"
-            alt="Twelve Crop Care Bio Solutions pheromone lure packets laid out on a packing desk"
-            width={1548}
-            height={968}
-            className="aspect-[16/10] w-full rounded-lg bg-paper-3 object-cover shadow-[0_24px_60px_-30px_rgba(20,33,26,0.55)]"
-          />
-        }
       />
 
       {/* About the company */}

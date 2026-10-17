@@ -202,10 +202,10 @@ export const FIELD_GALLERY = [
     alt: 'A woven basket of freshly picked mangoes with leaves, seen from directly above',
   },
   {
-    src: '/images/field/field-10.webp',
-    full: '/images/field/field-10-full.webp',
+    src: '/images/field/field-packets-labelled.webp',
+    full: '/images/field/field-packets-labelled-full.webp',
     caption: 'Lures sealed and packed for dispatch',
-    alt: 'Sealed foil pheromone lure sachets laid out on a table beside a packing carton',
+    alt: 'Twelve labelled Crop Care Bio Solutions pheromone lure sachets laid out on a table beside a packing carton',
   },
   {
     src: '/images/field/field-11.webp',
