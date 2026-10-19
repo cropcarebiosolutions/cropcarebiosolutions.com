@@ -113,7 +113,7 @@ export function FeaturedProducts({
           title="Featured Products"
           action={
             <Button variant="outline" size="sm" onClick={() => onNavigate('products')} withArrow>
-              View our range of products
+              Explore our products portfolio
             </Button>
           }
         />
