@@ -196,7 +196,12 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      <Footer onNavigate={navigate} onOpenProduct={openProduct} />
+      <Footer
+        onNavigate={navigate}
+        onOpenProduct={openProduct}
+        onRequestQuote={requestQuote}
+        onZoom={openZoom}
+      />
 
       <WhatsAppTab />
 

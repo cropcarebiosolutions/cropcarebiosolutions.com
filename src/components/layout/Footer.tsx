@@ -1,17 +1,25 @@
+import { useCallback, useState } from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import type { PageId, Product } from '../../types';
 import { COMPANY, CONTACT } from '../../data/site';
 import { PRODUCTS } from '../../data/products';
+import { BIO_TOOLS, TRAPS } from '../../data/traps';
+import { TRAP_PROTOCOLS } from '../../data/trapProtocols';
 import { PAGE_PATHS, productPath } from '../../lib/routes';
 import { RouteLink } from '../ui/RouteLink';
+import { TrapSheet, type TrapSheetItem } from '../product/TrapSheet';
 import { Logo, LogoText } from './Logo';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
   onOpenProduct: (product: Product) => void;
+  onRequestQuote: (itemName: string) => void;
+  onZoom: (src: string, alt: string) => void;
 }
 
-export function Footer({ onNavigate, onOpenProduct }: FooterProps) {
+export function Footer({ onNavigate, onOpenProduct, onRequestQuote, onZoom }: FooterProps) {
+  const [sheet, setSheet] = useState<TrapSheetItem | null>(null);
+  const closeSheet = useCallback(() => setSheet(null), []);
   const year = new Date().getFullYear();
   /* "Our Products", in the order the company asked for: four lures, then
      three traps and the sticky traps. */
@@ -26,8 +34,20 @@ export function Footer({ onNavigate, onOpenProduct }: FooterProps) {
     { anchor: 'sticky-sheets', label: 'Sticky Traps' },
   ];
 
-  /** Opens the Insect Traps page and brings the chosen trap into view. */
+  /** Opens the trap's protocol in place, the way the lure links open theirs.
+      Falls back to the Insect Traps page if a trap has no protocol. */
   const goToTrap = (anchor: string) => {
+    const protocol = TRAP_PROTOCOLS[anchor];
+    const trap = TRAPS.find((item) => item.id === anchor);
+    const tool = BIO_TOOLS.find((item) => item.id === anchor);
+    if (protocol && trap) {
+      setSheet({ name: trap.name, label: trap.family.replace('-', ' '), imageUrl: trap.imageUrl, protocol });
+      return;
+    }
+    if (protocol && tool) {
+      setSheet({ name: tool.name, label: 'Sticky trap', imageUrl: tool.imageUrl, protocol });
+      return;
+    }
     onNavigate('traps');
     window.setTimeout(() => {
       document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -157,6 +177,16 @@ export function Footer({ onNavigate, onOpenProduct }: FooterProps) {
             Residue-free crop protection
           </p>
         </div>
+      </div>
+
+      {/* Reset the footer's light text so the panel reads like it does elsewhere. */}
+      <div className="text-ink">
+        <TrapSheet
+          item={sheet}
+          onClose={closeSheet}
+          onRequestQuote={onRequestQuote}
+          onZoom={onZoom}
+        />
       </div>
     </footer>
   );

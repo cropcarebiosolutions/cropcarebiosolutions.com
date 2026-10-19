@@ -95,7 +95,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const HOME = {
   heroCaption: 'Eco-friendly solutions to protect crops naturally and empower farmers.',
   welcome: [
-    'At Crop Care Bio Solutions, we believe that every seed a farmer plants carries hope, and every harvest is the Earth’s gracious blessing.',
+    'At Crop Care Bio Solutions, we believe that every seed a farmer plants carries hope, and every harvest is the beautiful bond between farmers and nature.',
     'Together, farmers and nature nurture life, resilience, and the dreams of a brighter tomorrow.',
   ],
   missionVision:

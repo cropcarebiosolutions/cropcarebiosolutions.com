@@ -126,10 +126,10 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
           <SectionHeading index="03" title="We Stand For" />
 
-          <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12">
             {/* Two across rather than a stacked list, so all five values sit in
                 one screen without scrolling. */}
-            <ol className="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
+            <ol className="grid content-start gap-x-10 sm:grid-cols-2 lg:col-span-8">
               {WE_STAND_FOR.map((value, index) => (
                 <Reveal
                   as="li"
@@ -154,17 +154,19 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               ))}
             </ol>
 
+            {/* Kept small and pinned to the top, so the list beside them stays tight
+                instead of stretching to the images' height. */}
             <Reveal className="lg:col-span-4">
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
+              <div className="grid grid-cols-2 gap-3">
                 <img
                   src={trapFarmer}
                   alt="A farmer hanging a Crop Care fruit fly trap on a mango tree"
-                  className="aspect-[4/3] w-full rounded-lg object-cover"
+                  className="aspect-square w-full rounded-lg object-cover"
                 />
                 <img
                   src={harvest}
                   alt="Harvested fruit, clean and unblemished"
-                  className="aspect-[4/3] w-full rounded-lg object-cover"
+                  className="aspect-square w-full rounded-lg object-cover"
                 />
               </div>
             </Reveal>

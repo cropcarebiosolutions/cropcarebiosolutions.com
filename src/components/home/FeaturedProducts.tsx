@@ -1,5 +1,5 @@
-import { useCallback, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useCallback, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import type { PageId, Product } from '../../types';
 import { FEATURED } from '../../data/site';
 import { PRODUCTS } from '../../data/products';
@@ -37,7 +37,6 @@ export function FeaturedProducts({
   onRequestQuote,
   onZoom,
 }: FeaturedProductsProps) {
-  const railRef = useRef<HTMLDivElement>(null);
   const [sheet, setSheet] = useState<TrapSheetItem | null>(null);
   const closeSheet = useCallback(() => setSheet(null), []);
 
@@ -51,12 +50,6 @@ export function FeaturedProducts({
 
   /** Companion products are not counted as lures in their own right. */
   const lureCount = PRODUCTS.filter((product) => !product.companionTo).length;
-
-  const scrollRail = (direction: 1 | -1) => {
-    const rail = railRef.current;
-    if (!rail) return;
-    rail.scrollBy({ left: direction * (rail.clientWidth * 0.8), behavior: 'smooth' });
-  };
 
   /* Resolve the featured names from the content sheet against the real catalogue,
      so a card can never drift out of sync with the product data. */
@@ -119,33 +112,9 @@ export function FeaturedProducts({
           index="03"
           title="Featured Products"
           action={
-            <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => onNavigate('products')}
-                withArrow
-                className="mr-2"
-              >
-                View our range
-              </Button>
-              <button
-                type="button"
-                onClick={() => scrollRail(-1)}
-                aria-label="Previous products"
-                className="grid h-11 w-11 place-items-center rounded-full border border-line-strong text-ink transition-colors hover:border-pine hover:text-pine"
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollRail(1)}
-                aria-label="Next products"
-                className="grid h-11 w-11 place-items-center rounded-full border border-line-strong text-ink transition-colors hover:border-pine hover:text-pine"
-              >
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </div>
+            <Button variant="outline" size="sm" onClick={() => onNavigate('products')} withArrow>
+              View our range products
+            </Button>
           }
         />
       </div>
@@ -153,7 +122,7 @@ export function FeaturedProducts({
       {/* Aligned to the container on the left, running off the edge on the
           right, so the rail reads as continuing past the screen. */}
       <div className="mx-auto mt-14 max-w-[1320px] px-5 sm:px-8">
-        <div ref={railRef} className="rail -mr-5 flex gap-5 overflow-x-auto pb-2 sm:-mr-8">
+        <div className="rail -mr-5 flex gap-5 overflow-x-auto pb-2 sm:-mr-8">
           {cards.map((card) => (
             <article key={card.key} className="group w-[280px] shrink-0 sm:w-[320px]">
               <RouteLink to={{ path: card.href }} onNavigate={card.open} className="block w-full text-left">
