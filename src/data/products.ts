@@ -12,6 +12,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'melon-fly',
     name: 'Melon Fly Lure',
+    heading: 'Effective Melon Fly Monitoring with Targeted Lures',
     scientificName: 'Bactrocera cucurbitae',
     pestCommonName: 'Melon Fly',
     code: 'MF',
@@ -91,6 +92,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'oriental-fruit-fly',
     name: 'Oriental Fruit Fly Lure',
+    heading: 'Smart Monitoring Solutions for Oriental Fruit Flies',
     scientificName: 'Bactrocera dorsalis',
     pestCommonName: 'Oriental Fruit Fly',
     code: 'OFF',
@@ -144,6 +146,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'tuta-absoluta',
     name: 'Tuta absoluta Lure',
+    heading: 'Protecting Tomato Crops Through Targeted Pest Monitoring',
     scientificName: 'Tuta absoluta',
     pestCommonName: 'Tomato Leaf Miner',
     code: 'TLM',
@@ -186,6 +189,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'shoot-borer',
     name: 'Fruit & Shoot Borer Lure',
+    heading: 'Precision Monitoring of Fruit and Shoot Borer in Brinjal Crops',
     scientificName: 'Leucinodes orbonalis',
     pestCommonName: 'Brinjal Fruit & Shoot Borer',
     code: 'EPB',
@@ -228,6 +232,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'cotton-bollworm',
     name: 'Cotton Bollworm Lure',
+    heading: 'Advanced Monitoring Solutions for Cotton Bollworms',
     scientificName: 'Helicoverpa armigera',
     pestCommonName: 'Cotton Bollworm',
     code: 'CBW',
@@ -279,6 +284,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'tobacco-cutworm',
     name: 'Tobacco Cutworm Lure',
+    heading: 'Proactive Monitoring of Cutworm Pests in Agricultural Crops',
     scientificName: 'Spodoptera litura',
     pestCommonName: 'Tobacco Cutworm',
     code: 'TCW',
@@ -331,32 +337,35 @@ export const PRODUCTS: Product[] = [
   {
     id: 'red-palm-weevil',
     name: 'Red Palm Weevil Lure',
+    heading: 'Advanced Red Palm Weevil Management with Weevil Defender Lure',
     scientificName: 'Rhynchophorus ferrugineus',
     pestCommonName: 'Red Palm Weevil',
     code: 'RPW',
     family: 'palm-weevils',
     description: [
-      'The Red Palm Weevil Pheromone Lure is an eco-friendly and effective solution developed to control the Red Palm Weevil — a major pest that damages coconut, arecanut, oil palm and date palm trees.',
-      'This lure contains an aggregation pheromone, a natural compound that attracts both male and female weevils to the trap. By drawing them together, the lure helps reduce their population, stops further infestation, and protects the trees from internal damage.',
-      'Regular use of this lure helps farmers and plantation owners manage weevil attacks naturally, reducing the need for harmful chemicals and ensuring healthier, long-living trees.',
+      'The Red Palm Weevil Pheromone Lure with Weevil Defender is an eco-friendly pest management solution designed to attract and capture Red Palm Weevils, a major pest affecting coconut, arecanut, date palm and oil palm plantations.',
+      'The aggregation pheromone attracts both male and female Red Palm Weevils to the trap, while Weevil Defender acts as an additional attractant to enhance the trap’s overall attraction when used as recommended. Together, they support improved pest monitoring and help reduce weevil populations when used as part of an Integrated Pest Management (IPM) program.',
+      'Regular use helps farmers and plantation owners monitor pest activity, manage infestations and protect palm trees from internal damage, reducing reliance on chemical control methods when integrated with appropriate management practices.',
     ],
     modeOfAction:
-      'Aggregation pheromone — attracts both male and female weevils to the trap.',
-    fieldLife: '2–3 months, based on weather and field conditions',
-    shelfLife: '2 years from production date, if stored properly',
-    trapsPerAcre: '3–4 per acre',
+      'Aggregation Pheromone: Attracts both male and female Red Palm Weevils towards the trap. Weevil Defender: Provides additional attraction to help draw more target weevils towards the trap when used according to product recommendations.',
+    fieldLife: '60–90 days, depending on weather and field conditions',
+    shelfLife: '2 years from the date of production when stored under recommended conditions',
+    trapsPerAcre: '3–4 traps per acre, adjusted according to infestation levels and plantation conditions',
     targetCrops: ['Coconut', 'Arecanut', 'Date Palm', 'Oil Palm'],
     application: [
-      'Place the lure inside the trap and install it halfway into the soil, up to the side openings, or hang it on the tree trunk at about 1 to 1.5 metres height.',
-      'Place traps in shaded areas to improve effectiveness.',
-      'Use 1 lure per trap, and 3–4 traps per acre depending on infestation levels.',
-      'Replace the lure every 2–3 months, based on weather and field conditions.',
+      'Place the Red Palm Weevil pheromone lure inside a suitable palm weevil trap.',
+      'Add or install Weevil Defender according to its product-specific instructions.',
+      'Position the trap in a suitable shaded location within the plantation, following the recommended trap placement method.',
+      'Use one pheromone lure per trap and install approximately 3–4 traps per acre, adjusting the density according to pest pressure.',
+      'Inspect traps regularly, remove captured weevils and maintain the trap as recommended.',
+      'Replace the pheromone lure every 60–90 days, depending on weather and field conditions. Follow the separate replacement instructions for Weevil Defender.',
     ],
     storage: [
-      'Store in a cool, dry place, away from direct sunlight.',
-      'Open the pouch only when ready to use.',
-      'After use, bury or burn the used lure safely.',
-      'When stored properly, the lure remains effective for up to 2 years from the production date.',
+      'Store in a cool, dry place away from direct sunlight.',
+      'Open the individual pouch only when ready to use.',
+      'Handle and dispose of used lures and attractants according to their product labels and local guidelines.',
+      'When stored correctly in unopened packaging, the pheromone lure has a shelf life of up to 2 years from the production date.',
     ],
     recommendedTraps: ['Palm Trap'],
     imageUrl: '/images/photos/lure-red-palm-weevil.webp',
@@ -375,6 +384,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'rhinoceros-beetle',
     name: 'Rhinoceros Beetle Lure',
+    heading: 'Strengthening Palm Protection Against Rhinoceros Beetle',
     scientificName: 'Oryctes rhinoceros',
     pestCommonName: 'Rhinoceros Beetle',
     code: 'RB',
@@ -385,7 +395,7 @@ export const PRODUCTS: Product[] = [
     ],
     modeOfAction:
       'Aggregation pheromone — attracts both male and female beetles to the trap.',
-    fieldLife: '2–3 months, based on weather and field conditions',
+    fieldLife: '60–90 days, based on weather and field conditions',
     shelfLife: '2 years, if stored properly',
     trapsPerAcre: '3–4 per acre',
     targetCrops: ['Coconut', 'Oil Palm'],
@@ -393,7 +403,7 @@ export const PRODUCTS: Product[] = [
       'Place the lure in the trap and install it halfway into the soil, or hang it on the tree trunk at about 1–1.5 metres height.',
       'Place traps in shaded areas for better effectiveness.',
       'Use 1 lure per trap, with 3–4 traps per acre, depending on pest levels.',
-      'Replace the lure every 2–3 months, based on weather and field conditions.',
+      'Replace the lure every 60–90 days, based on weather and field conditions.',
     ],
     storage: [
       'Store in a cool, dry place, away from sunlight.',
@@ -418,6 +428,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'pink-bollworm',
     name: 'Pink Bollworm Lure',
+    heading: 'Innovative Pheromone Solutions for Cotton Pest Management',
     scientificName: 'Pectinophora gossypiella',
     pestCommonName: 'Pink Bollworm',
     code: 'PBW',
@@ -459,6 +470,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'fall-armyworm',
     name: 'Fall Armyworm Lure',
+    heading: 'Early Detection of Fall Armyworm in Maize Crops',
     scientificName: 'Spodoptera frugiperda',
     pestCommonName: 'Fall Armyworm',
     code: 'FAW',
@@ -501,6 +513,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'yellow-stem-borer',
     name: 'Yellow Stem Borer Lure',
+    heading: 'Innovative Lure Technology for Rice Stem Borer',
     scientificName: 'Scirpophaga incertulas',
     pestCommonName: 'Yellow Stem Borer',
     code: 'YSB',
@@ -543,6 +556,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'diamondback-moth',
     name: 'Diamondback Moth Lure',
+    heading: 'Targeted Detection of Diamondback Moth Activity',
     scientificName: 'Plutella xylostella',
     pestCommonName: 'Diamondback Moth',
     code: 'DBM',

@@ -52,7 +52,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <dl className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
                 <div className="bg-paper p-6">
                   <dt className="eyebrow">What we do</dt>
-                  <dd className="mt-2.5 text-[15px] text-pine">Manufacturer &amp; exporter</dd>
+                  <dd className="mt-2.5 text-[15px] text-pine">
+                    Manufacturing &amp; Exporting Eco-Friendly Pest Management Solutions
+                  </dd>
                 </div>
                 <div className="bg-paper p-6">
                   <dt className="eyebrow">What we make</dt>
@@ -204,8 +206,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
         <div className="mx-auto max-w-[1320px] px-5 sm:px-8">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="eyebrow text-paper/80">Closing Message</p>
-            <blockquote className="mt-8">
+            <blockquote>
               <p className="font-display text-[clamp(1.7rem,4vw,2.9rem)] leading-[1.16] text-paper [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
                 &ldquo;{ABOUT.closing}&rdquo;
               </p>

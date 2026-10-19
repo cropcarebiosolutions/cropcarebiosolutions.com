@@ -124,7 +124,15 @@ export function ProductSheet({
                 </figure>
               </div>
 
-              <div className="mt-8 space-y-4 text-[16px] leading-relaxed text-ink-2">
+              {product.heading && (
+                <p className="mt-7 font-display text-[clamp(1.2rem,2.2vw,1.45rem)] leading-snug text-pine">
+                  {product.heading}
+                </p>
+              )}
+
+              <div
+                className={`${product.heading ? 'mt-4' : 'mt-8'} space-y-4 text-[16px] leading-relaxed text-ink-2`}
+              >
                 {product.description.map((paragraph) => (
                   <p key={paragraph.slice(0, 40)}>{paragraph}</p>
                 ))}

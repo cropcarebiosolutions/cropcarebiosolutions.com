@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import type { PageId, Product } from '../../types';
 import { FEATURED } from '../../data/site';
@@ -10,10 +10,13 @@ import { RouteLink } from '../ui/RouteLink';
 import { Figure } from '../ui/Figure';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Button } from '../ui/Button';
+import { TrapSheet, type TrapSheetItem } from '../product/TrapSheet';
 
 interface FeaturedProductsProps {
   onNavigate: (page: PageId) => void;
   onOpenProduct: (product: Product) => void;
+  onRequestQuote: (itemName: string) => void;
+  onZoom: (src: string, alt: string) => void;
 }
 
 interface Card {
@@ -28,8 +31,23 @@ interface Card {
   cta: string;
 }
 
-export function FeaturedProducts({ onNavigate, onOpenProduct }: FeaturedProductsProps) {
+export function FeaturedProducts({
+  onNavigate,
+  onOpenProduct,
+  onRequestQuote,
+  onZoom,
+}: FeaturedProductsProps) {
   const railRef = useRef<HTMLDivElement>(null);
+  const [sheet, setSheet] = useState<TrapSheetItem | null>(null);
+  const closeSheet = useCallback(() => setSheet(null), []);
+
+  /** Traps open their protocol right here, as the lures do, instead of
+      sending the visitor to the Insect Traps page. */
+  const openProtocol = (id: string, name: string, label: string, imageUrl: string) => {
+    const protocol = TRAP_PROTOCOLS[id];
+    if (protocol) setSheet({ name, label, imageUrl, protocol });
+    else onNavigate('traps');
+  };
 
   /** Companion products are not counted as lures in their own right. */
   const lureCount = PRODUCTS.filter((product) => !product.companionTo).length;
@@ -70,9 +88,9 @@ export function FeaturedProducts({ onNavigate, onOpenProduct }: FeaturedProducts
         blurb: TRAP_PROTOCOLS[trap.id]?.heading ?? trap.bestFor,
         image: trap.imageUrl,
         alt: trap.name,
-        open: () => onNavigate('traps'),
+        open: () => openProtocol(trap.id, trap.name, trap.family.replace('-', ' '), trap.imageUrl),
         href: `${PAGE_PATHS.traps}#${trap.id}`,
-        cta: 'See traps',
+        cta: 'View details',
       });
       return acc;
     }
@@ -86,9 +104,9 @@ export function FeaturedProducts({ onNavigate, onOpenProduct }: FeaturedProducts
         blurb: TRAP_PROTOCOLS[tool.id]?.heading ?? tool.tagline,
         image: tool.imageUrl,
         alt: tool.name,
-        open: () => onNavigate('traps'),
+        open: () => openProtocol(tool.id, tool.name, 'Sticky trap', tool.imageUrl),
         href: `${PAGE_PATHS.traps}#${tool.id}`,
-        cta: 'See traps',
+        cta: 'View details',
       });
     }
     return acc;
@@ -102,6 +120,15 @@ export function FeaturedProducts({ onNavigate, onOpenProduct }: FeaturedProducts
           title="Featured Products"
           action={
             <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => onNavigate('products')}
+                withArrow
+                className="mr-2"
+              >
+                View our range
+              </Button>
               <button
                 type="button"
                 onClick={() => scrollRail(-1)}
@@ -173,6 +200,13 @@ export function FeaturedProducts({ onNavigate, onOpenProduct }: FeaturedProducts
           <div className="w-2 shrink-0 sm:w-6" aria-hidden />
         </div>
       </div>
+
+      <TrapSheet
+        item={sheet}
+        onClose={closeSheet}
+        onRequestQuote={onRequestQuote}
+        onZoom={onZoom}
+      />
     </section>
   );
 }

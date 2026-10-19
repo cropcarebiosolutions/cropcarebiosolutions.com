@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { ArrowRight, Search, X } from 'lucide-react';
 import type { PageId, Product } from '../types';
 import { PRODUCTS } from '../data/products';
 import { productPath } from '../lib/routes';
@@ -147,50 +147,22 @@ export function ProductsPage({
                         </p>
                       )}
 
-                      <p className="mt-3 line-clamp-4 text-[14px] leading-relaxed text-ink-2">
-                        {product.description[0]}
-                      </p>
+                      {/* Heading only, as on the Insect Traps cards; the description,
+                          field life, traps and crops open with "View protocol". */}
+                      {product.heading && (
+                        <p className="mt-3 text-[15px] leading-relaxed text-ink-2">
+                          {product.heading}
+                        </p>
+                      )}
 
-                      <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-line pt-4 text-[13px]">
-                        {product.fieldLife && (
-                          <div>
-                            <dt className="eyebrow">Field life</dt>
-                            <dd className="mt-1.5 text-ink">
-                              {product.fieldLife.split(',')[0]}
-                            </dd>
-                          </div>
-                        )}
-                        {product.trapsPerAcre && (
-                          <div>
-                            <dt className="eyebrow">Traps</dt>
-                            <dd className="mt-1.5 text-ink">{product.trapsPerAcre}</dd>
-                          </div>
-                        )}
-                      </dl>
-
-                      <ul className="mt-5 flex flex-wrap gap-1.5">
-                        {product.targetCrops.slice(0, 3).map((crop) => (
-                          <li
-                            key={crop}
-                            className="border border-line bg-paper-2 px-2.5 py-1 text-[12px] text-ink-2"
-                          >
-                            {crop}
-                          </li>
-                        ))}
-                        {product.targetCrops.length > 3 && (
-                          <li className="px-1 py-1 text-[12px] text-ink-3">
-                            +{product.targetCrops.length - 3} more
-                          </li>
-                        )}
-                      </ul>
-
-                      <div className="mt-auto flex items-center gap-5 pt-6">
+                      <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-6">
                         <button
                           type="button"
                           onClick={() => onOpenProduct(product)}
-                          className="rounded-full bg-pine px-5 py-2.5 text-[13px] font-medium text-paper transition-colors hover:bg-pine-soft"
+                          className="inline-flex items-center gap-2 rounded-full bg-pine px-5 py-2.5 text-[13px] font-medium text-paper transition-colors hover:bg-pine-soft"
                         >
                           View protocol
+                          <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                         </button>
                         <button
                           type="button"

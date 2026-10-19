@@ -49,9 +49,7 @@ export function ClosingInvitation({ onNavigate }: ClosingInvitationProps) {
 
       <div className="relative mx-auto max-w-[1320px] px-5 sm:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow text-paper/80">Closing message</p>
-
-          <blockquote className="mt-8">
+          <blockquote>
             <p className="font-display text-[clamp(1.7rem,4vw,2.9rem)] leading-[1.16] text-paper [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
               &ldquo;{HOME.closing}&rdquo;
             </p>

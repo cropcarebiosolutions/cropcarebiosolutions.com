@@ -9,6 +9,7 @@ interface HomePageProps {
   onNavigate: (page: PageId) => void;
   onOpenProduct: (product: Product) => void;
   onZoom: (src: string, alt: string) => void;
+  onRequestQuote: (itemName: string) => void;
 }
 
 /**
@@ -17,13 +18,18 @@ interface HomePageProps {
  * and contact. The photography runs across the top of the hero, so it is
  * already moving when the page opens.
  */
-export function HomePage({ onNavigate, onOpenProduct, onZoom }: HomePageProps) {
+export function HomePage({ onNavigate, onOpenProduct, onZoom, onRequestQuote }: HomePageProps) {
   return (
     <>
       <Hero onNavigate={onNavigate} onZoom={onZoom} />
       <WhyCropCare onNavigate={onNavigate} />
       <MissionVision onNavigate={onNavigate} />
-      <FeaturedProducts onNavigate={onNavigate} onOpenProduct={onOpenProduct} />
+      <FeaturedProducts
+        onNavigate={onNavigate}
+        onOpenProduct={onOpenProduct}
+        onRequestQuote={onRequestQuote}
+        onZoom={onZoom}
+      />
       <ClosingInvitation onNavigate={onNavigate} />
     </>
   );

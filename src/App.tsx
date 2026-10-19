@@ -159,6 +159,7 @@ export default function App() {
                 onNavigate={navigate}
                 onOpenProduct={openProduct}
                 onZoom={openZoom}
+                onRequestQuote={requestQuote}
               />
             )}
 

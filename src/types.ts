@@ -21,6 +21,8 @@ export interface Product {
   id: string;
   /** Short catalogue name, e.g. "Melon Fly Lure". */
   name: string;
+  /** One-line heading shown on the lure card; the rest sits behind "View protocol". */
+  heading?: string;
   /** Latin binomial, italicised wherever it is rendered. */
   scientificName?: string;
   /** How farmers refer to the pest. */
