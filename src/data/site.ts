@@ -150,8 +150,8 @@ export const FIELD_GALLERY = [
   {
     src: '/images/field/field-fruit-fly-trap.webp',
     full: '/images/field/field-fruit-fly-trap-full.webp',
-    caption: 'Fruit fly trap hanging in the mango canopy',
-    alt: 'A yellow and clear Crop Care Bio Solutions fruit fly trap hanging from a mango branch among green mangoes',
+    caption: 'Dual Catch fruit fly trap hanging in the mango canopy',
+    alt: 'A yellow and clear Crop Care Bio Solutions Dual Catch fruit fly trap hanging from a mango branch among green mangoes',
   },
   {
     src: '/images/field/field-02.webp',

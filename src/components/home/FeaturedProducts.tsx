@@ -61,7 +61,7 @@ export function FeaturedProducts({
           key: product.id,
           label: entry.label,
           name: product.name,
-          blurb: product.description[0] ?? '',
+          blurb: product.heading ?? product.description[0] ?? '',
           image: product.imageUrl,
           alt: product.imageAlt,
           open: () => onOpenProduct(product),
@@ -113,7 +113,7 @@ export function FeaturedProducts({
           title="Featured Products"
           action={
             <Button variant="outline" size="sm" onClick={() => onNavigate('products')} withArrow>
-              View our range products
+              View our range of products
             </Button>
           }
         />

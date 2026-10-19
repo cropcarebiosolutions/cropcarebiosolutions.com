@@ -7,7 +7,7 @@ const FRUIT_FLY_SERVICING = 'Rinse when it is full and replace the lure at 90 da
 export const TRAPS: TrapType[] = [
   {
     id: 'fruit-fly-trap',
-    name: 'Fruit Fly Trap',
+    name: 'Dual Catch Fruit Fly Trap',
     family: 'fruit-fly',
     bestFor: 'Melon Fly and Oriental Fruit Fly in orchards and vegetable vines',
     suitableLures: ['MF', 'OFF'],

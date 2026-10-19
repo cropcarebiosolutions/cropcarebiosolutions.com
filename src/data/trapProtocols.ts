@@ -9,7 +9,7 @@ export const TRAP_PROTOCOLS: Record<string, Protocol> = {
   'fruit-fly-trap': {
     heading: 'Effective Monitoring & Trapping of Melon Fly and Oriental Fruit Fly',
     intro: [
-      'The Fruit Fly Trap is designed for effective monitoring and trapping of Melon Fly and Oriental Fruit Fly in orchards and vegetable vine crops. Its practical square-shaped design features entry openings on both sides and an internal lure holder, allowing fruit flies to be attracted and trapped efficiently.',
+      'The Dual Catch Fruit Fly Trap is designed for effective monitoring and trapping of Melon Fly and Oriental Fruit Fly in orchards and vegetable vine crops. Its practical square-shaped design features entry openings on both sides and an internal lure holder, allowing fruit flies to be attracted and trapped efficiently.',
       'The lure releases an attractant that draws fruit flies into the trap through the side openings. Once inside, the trap design makes it difficult for the flies to escape. The transparent lower chamber provides clear visibility of the captured flies, enabling easy monitoring without opening the trap.',
     ],
     blocks: [

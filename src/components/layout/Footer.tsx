@@ -28,7 +28,7 @@ export function Footer({ onNavigate, onOpenProduct, onRequestQuote, onZoom }: Fo
     .filter((product): product is Product => Boolean(product));
 
   const trapLinks = [
-    { anchor: 'fruit-fly-trap', label: 'Fruit Fly Trap' },
+    { anchor: 'fruit-fly-trap', label: 'Dual Catch Fruit Fly Trap' },
     { anchor: 'funnel-trap', label: 'Funnel Trap' },
     { anchor: 'solar-trap', label: 'Solar Light Trap' },
     { anchor: 'sticky-sheets', label: 'Sticky Traps' },

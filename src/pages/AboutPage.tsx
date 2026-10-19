@@ -160,7 +160,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <div className="grid grid-cols-2 gap-3">
                 <img
                   src={trapFarmer}
-                  alt="A farmer hanging a Crop Care fruit fly trap on a mango tree"
+                  alt="A farmer hanging a Crop Care Dual Catch fruit fly trap on a mango tree"
                   className="aspect-square w-full rounded-lg object-cover"
                 />
                 <img
