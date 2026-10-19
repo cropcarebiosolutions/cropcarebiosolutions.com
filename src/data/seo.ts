@@ -19,7 +19,7 @@ import { PAGE_ORDER, PAGE_PATHS, productPath, type Route } from '../lib/routes';
  * repeated for every state, which Google treats as keyword stuffing.
  */
 
-export const SITE_URL = 'https://cropcarebiosolutions.com';
+export const SITE_URL = 'https://www.cropcarebiosolutions.com';
 export const OG_IMAGE = `${SITE_URL}/brand/og-image.png`;
 export const LOGO_URL = `${SITE_URL}/brand/logo-mark@2x.png`;
 
