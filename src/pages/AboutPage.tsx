@@ -176,10 +176,10 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* Closing message */}
       <section className="relative isolate overflow-hidden bg-pine py-24 lg:py-32">
-        {/* Hands, seed and growing crop behind the closing line. */}
+        {/* Farmers gathering the rice and vegetable harvest, behind the closing line. */}
         {reduceMotion ? (
           <img
-            src="/videos/closing-message-poster.webp"
+            src="/videos/about-closing-poster.webp"
             alt=""
             aria-hidden
             loading="lazy"
@@ -193,12 +193,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             loop
             playsInline
             preload="metadata"
-            poster="/videos/closing-message-poster.webp"
+            poster="/videos/about-closing-poster.webp"
             aria-hidden
             className="absolute inset-0 -z-20 h-full w-full object-cover"
           >
-            <source src="/videos/closing-message.webm" type="video/webm" />
-            <source src="/videos/closing-message.mp4" type="video/mp4" />
+            <source src="/videos/about-closing.webm" type="video/webm" />
+            <source src="/videos/about-closing.mp4" type="video/mp4" />
           </video>
         )}
         <div
