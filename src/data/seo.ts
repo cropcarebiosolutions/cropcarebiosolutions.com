@@ -40,6 +40,8 @@ const absolute = (path: string) => (path.startsWith('http') ? path : `${SITE_URL
 
 const BASE_KEYWORDS = [
   'Crop Care Bio Solutions',
+  'Crop Care Bio Solutions Hyderabad',
+  'cropcarebiosolutions',
   'pheromone lures',
   'insect traps',
   'pheromone lure manufacturer Hyderabad',
@@ -51,7 +53,7 @@ export const PAGE_META: Record<PageId, PageMeta> = {
     path: PAGE_PATHS.home,
     title: 'Crop Care Bio Solutions | Pheromone Lures & Insect Traps, Hyderabad',
     description:
-      'Hyderabad manufacturer & exporter of pheromone lures, fruit fly traps, funnel traps and sticky traps. Eco-friendly pest control for farmers across India.',
+      'Crop Care Bio Solutions, Hyderabad: manufacturer & exporter of pheromone lures, fruit fly traps, funnel traps and sticky traps for farmers across India.',
     keywords: [
       ...BASE_KEYWORDS,
       'bio solutions Hyderabad',
@@ -206,10 +208,16 @@ const areaServed = [
 
 function organization() {
   return {
-    '@type': 'LocalBusiness',
+    '@type': ['Organization', 'LocalBusiness'],
     '@id': ORG_ID,
     name: COMPANY.name,
-    alternateName: ['Crop Care', 'CropCare Bio Solutions'],
+    legalName: COMPANY.name,
+    alternateName: [
+      'CROP CARE BIO SOLUTIONS',
+      'CropCare Bio Solutions',
+      'Crop Care Bio Solutions Hyderabad',
+      'cropcarebiosolutions.com',
+    ],
     url: `${SITE_URL}/`,
     logo: { '@type': 'ImageObject', url: LOGO_URL, width: 512, height: 512 },
     image: OG_IMAGE,
@@ -225,6 +233,10 @@ function organization() {
       postalCode: SERVICE_AREAS.home.postalCode,
       addressCountry: 'IN',
     },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${COMPANY.name} Gajularamaram Hyderabad`)}`,
+    // The company's own profiles elsewhere. These tie the Google business
+    // listing and directory pages to this site as one company.
+    ...(COMPANY.profiles.length ? { sameAs: COMPANY.profiles } : {}),
     areaServed,
     contactPoint: {
       '@type': 'ContactPoint',
@@ -264,6 +276,8 @@ function website() {
     '@id': SITE_ID,
     url: `${SITE_URL}/`,
     name: COMPANY.name,
+    // Google reads these for the site name shown above each search result.
+    alternateName: ['CropCare Bio Solutions', 'cropcarebiosolutions.com'],
     description: HOME.heroCaption,
     inLanguage: 'en-IN',
     publisher: { '@id': ORG_ID },

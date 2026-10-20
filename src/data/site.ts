@@ -8,6 +8,9 @@ export const COMPANY = {
   name: 'Crop Care Bio Solutions',
   /** The slogan, used wherever the brand signs off. */
   slogan: 'Caring for Nature',
+  /** Official profiles on other sites (IndiaMART, Google Maps, Facebook,
+   *  Instagram, LinkedIn…), full https links. Feeds the search "sameAs" list. */
+  profiles: [] as string[],
   /** The line the About page leads on. */
   promise: 'Growing a Sustainable Future, Naturally',
   /** Short form, for the masthead strip. */
